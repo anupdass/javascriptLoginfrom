@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="loginform">
+        <div class="inputform">
+            <input id="username" class="name" type="text" placeholder="enter your name"><br>
+            <input id="password" class="name" type="password" name="" id="" placeholder="enter your password">
+            <button id="show" onclick="passwordHandle()">show</button>
+            <br>
+           <a id="link" href=""> <input onclick="nextPage()" class="name" type="submit" name="" id=""></a>
+        </div>
+    </section>
+
+
+    <script>
+        function passwordHandle(){
+            var x = document.getElementById('password');
+            var y = document.getElementById('show');
+            if(x.type === 'password'){
+                x.type = 'text'
+                y.innerText = 'hide'
+            }
+            else{
+                x.type = 'password'
+                y.innerText = 'show'
+            }
+        }
+
+        function nextPage (){
+            var x = document.getElementById('password');
+            var z = document.getElementById('username');
+            var y = document.getElementById('link');
+            console.log(x.value)
+            if( z.value.length == 0 || x.value.length ==0){
+                alert('please fill up form');
+            }
+            if(x.value.length == 0 || z.value.length == 0){
+                alert('please fill up form');
+            }
+            else{
+                y.href = '/welcome.html'
+            }
+        }
+    </script>
+
+</body>
+</html>
